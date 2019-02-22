@@ -1,0 +1,22 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "google"
+  ],
+  "rules": {
+    "linebreak-style":0,
+    "max-len": [
+      "error",
+      {
+        "code": 120
+      }
+    ]
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  }
+}

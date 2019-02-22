@@ -1,0 +1,5 @@
+<button mat-flat-button color="primary"
+        *ngFor="let category of QUESTION_CATEGORIES"
+        routerLink='/test/{{category.key}}'>
+  {{category.title}}
+</button>

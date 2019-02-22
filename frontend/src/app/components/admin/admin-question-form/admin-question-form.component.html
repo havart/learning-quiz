@@ -1,0 +1,40 @@
+
+<form (ngSubmit)="onSubmit()" [formGroup]="form" class="container">
+
+  <mat-form-field>
+    <input formControlName="question" matInput
+           placeholder="Введите вопрос">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select formControlName="category" placeholder="Выберите категорию вопроса">
+      <mat-option *ngFor="let category of QUESTION_CATEGORIES" [value]="category.key">
+        {{category.title}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input formControlName="answer1" matInput
+           placeholder="Введите правильный ответ 1">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input formControlName="answer2" matInput
+           placeholder="Введите неправильный ответ 2">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input formControlName="answer3" matInput
+           placeholder="Введите неправильный ответ 3">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input formControlName="answer4" matInput
+           placeholder="Введите неправильный ответ 4">
+  </mat-form-field>
+
+  <button class="mat-elevation-z8" color="primary" mat-raised-button type="submit">
+    {{questionId ? 'Сохранить запись ' : 'Создать'}}
+  </button>
+</form>

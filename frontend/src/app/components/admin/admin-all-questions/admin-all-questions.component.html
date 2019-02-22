@@ -1,0 +1,46 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" [dataSource]="listQuestions" matSort aria-label="question">
+
+    <!-- Question Column -->
+    <ng-container matColumnDef="question">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Вопрос</th>
+      <td mat-cell *matCellDef="let row">{{row.question}}</td>
+    </ng-container>
+
+    <!-- Category Column -->
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Категория</th>
+      <td *matCellDef="let row" mat-cell>{{getCategoryTitle(row.category)}}</td>
+    </ng-container>
+
+    <!-- Button Column -->
+    <ng-container matColumnDef="button">
+      <th mat-header-cell *matHeaderCellDef>
+        <button mat-raised-button color="primary"
+                routerLink="/admin/questions/new">Добавить вопрос
+        </button>
+      </th>
+
+      <td mat-cell *matCellDef="let row">
+        <a mat-raised-button color="primary"
+           routerLink='/admin/questions/{{row._id}}'
+           routerLinkActive="active">
+          <i class="material-icons"> edit </i>
+        </a>
+
+        <button (click)="deleteById(row._id)" color="warn" mat-raised-button>
+          <i class="material-icons"> delete </i>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [length]="dataSource.data.length"
+                 [pageIndex]="0"
+                 [pageSize]="50"
+                 [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>
