@@ -22,57 +22,53 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {AdminAllQuestionsComponent} from './components/admin/admin-all-questions/admin-all-questions.component';
-import {AdminMainComponent} from './components/admin/admin-main/admin-main.component';
-import {AdminNavComponent} from './components/admin/admin-nav/admin-nav.component';
-import {AdminQuestionFormComponent} from './components/admin/admin-question-form/admin-question-form.component';
-import {AdminQuizFormComponent} from './components/admin/admin-quiz-form/admin-quiz-form.component';
-import {MainComponent} from './components/client/main/main.component';
-import {ResultComponent} from './components/client/result/result.component';
-import {TestComponent} from './components/client/test/test.component';
-import {LoginFormComponent} from './components/login/login-form.component';
-import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
+// import {AdminAllQuestionsComponent} from './components/smart/admin-all-questions/admin-all-questions.component';
+// import {AdminAllQuizComponent} from './components/smart/admin-all-quiz/admin-all-quiz.component';
+// import {AdminMainComponent} from './components/dumb/admin-main/admin-main.component';
+// import {AdminNavComponent} from './components/smart/admin-nav/admin-nav.component';
+// import {AdminQuestionFormComponent} from './components/smart/admin-question-form/admin-question-form.component';
+// import {AdminQuizFormComponent} from './components/smart/admin-quiz-form/admin-quiz-form.component';
+import {MainComponent} from './pages/client/main/main.component';
+import {ResultComponent} from './pages/client/result/result.component';
+import {TestComponent} from './pages/client/test/test.component';
+import {LoginFormComponent} from './pages/login/login-form.component';
+import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
 import {BaseHttpService} from './services/base-http/base-http.service';
 import {QuestionHttpService} from './services/question/question-http.service';
-import { AdminAllQuizComponent } from './components/admin/admin-all-quiz/admin-all-quiz.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminQuestionFormComponent,
-    AdminQuizFormComponent,
-    AdminNavComponent,
-    AdminMainComponent,
-    AdminAllQuestionsComponent,
     PageNotFoundComponent,
     MainComponent,
     TestComponent,
     ResultComponent,
     LoginFormComponent,
-    AdminAllQuizComponent,
+
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
     FormsModule,
     HttpClientModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    MatMenuModule,
+    LayoutModule,
+    MatButtonModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatSelectModule,
+    MatSortModule,
     MatAutocompleteModule,
+    ReactiveFormsModule,
 
   ],
   providers: [BaseHttpService, QuestionHttpService],

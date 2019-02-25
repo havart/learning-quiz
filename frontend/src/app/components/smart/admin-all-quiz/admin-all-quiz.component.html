@@ -41,8 +41,8 @@
         <div class="example-element-diagram">
           <!-- <div class="example-element-position" *ngFor="let item of row.questionsArray" (click)="questionById(item)"> {{item}} </div> -->
           <div class="example-element-position" *ngFor="let item of questionsTitles"> {{item}} </div>
+          <a routerLink="/test/{{row._id}}" target="_blank"> link to quiz </a>
         </div>
-        <a routerLink="/quiz/{{row._id}}" target="_blank"> link to quiz </a>
       </div>
     </td>
   </ng-container>
