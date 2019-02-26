@@ -100,7 +100,7 @@ export class AdminQuizFormComponent implements OnInit {
       if (question) {
         this.questionsTitlesArray.push(question.question);
       }
-    })
+    });
   }
 
   private loadQuestionById(questionId: string) {

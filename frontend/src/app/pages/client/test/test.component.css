@@ -1,0 +1,27 @@
+textarea {
+  margin: 20px 0;
+  height: 100px;
+  resize: none;
+}
+
+.testAnswerField {
+  padding: 10px;
+  border-bottom: solid 1px #3f51b5;
+}
+
+#testAnswerFieldCheck {
+  background: #68ce6d;
+}
+
+.questionField {
+  margin: 0 5% 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mat-elevation-z8 {
+  margin: 20px 0;
+}
+
+
