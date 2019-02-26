@@ -31,7 +31,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 
 @NgModule({
   declarations: [
-     AdminComponent,
+    AdminComponent,
     AdminQuestionFormComponent,
     AdminQuizFormComponent,
     AdminNavComponent,

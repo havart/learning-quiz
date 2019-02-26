@@ -5,17 +5,17 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
   MatButtonModule,
   MatCardModule,
-  // MatFormFieldModule,
-  // MatIconModule,
   MatInputModule,
   MatListModule,
   MatMenuModule,
+  MatToolbarModule,
+  // MatFormFieldModule,
+  // MatIconModule,
   // MatPaginatorModule,
   // MatSelectModule,
   // MatSidenavModule,
   // MatSortModule,
   // MatTableModule,
-  MatToolbarModule,
   // MatAutocompleteModule,
 } from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
@@ -48,6 +48,7 @@ import {QuestionHttpService} from './services/question/question-http.service';
     FormsModule,
     HttpClientModule,
     LayoutModule,
+
     MatButtonModule,
     MatCardModule,
     MatInputModule,

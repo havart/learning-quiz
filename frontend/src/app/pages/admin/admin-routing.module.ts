@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminMainComponent } from 'src/app/components/dumb/admin-main/admin-main.component';
- import { AdminAllQuestionsComponent } from 'src/app/components/smart/admin-all-questions/admin-all-questions.component';
+import { AdminAllQuestionsComponent } from 'src/app/components/smart/admin-all-questions/admin-all-questions.component';
 import { AdminQuestionFormComponent } from 'src/app/components/smart/admin-question-form/admin-question-form.component';
 import { AdminAllQuizComponent } from 'src/app/components/smart/admin-all-quiz/admin-all-quiz.component';
 import { AdminQuizFormComponent } from 'src/app/components/smart/admin-quiz-form/admin-quiz-form.component';
@@ -44,11 +44,10 @@ const adminRoutes: Routes = [
 ];
 
 @NgModule({
-  // declarations: [],
+
   imports: [
     RouterModule.forChild(
        adminRoutes,
-      // {enableTracing: true},
     ),
      CommonModule
   ],
