@@ -5,29 +5,23 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
   MatButtonModule,
   MatCardModule,
-  MatFormFieldModule,
-  MatIconModule,
+  // MatFormFieldModule,
+  // MatIconModule,
   MatInputModule,
   MatListModule,
   MatMenuModule,
-  MatPaginatorModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSortModule,
-  MatTableModule,
+  // MatPaginatorModule,
+  // MatSelectModule,
+  // MatSidenavModule,
+  // MatSortModule,
+  // MatTableModule,
   MatToolbarModule,
-  MatAutocompleteModule,
+  // MatAutocompleteModule,
 } from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-// import {AdminAllQuestionsComponent} from './components/smart/admin-all-questions/admin-all-questions.component';
-// import {AdminAllQuizComponent} from './components/smart/admin-all-quiz/admin-all-quiz.component';
-// import {AdminMainComponent} from './components/dumb/admin-main/admin-main.component';
-// import {AdminNavComponent} from './components/smart/admin-nav/admin-nav.component';
-// import {AdminQuestionFormComponent} from './components/smart/admin-question-form/admin-question-form.component';
-// import {AdminQuizFormComponent} from './components/smart/admin-quiz-form/admin-quiz-form.component';
 import {MainComponent} from './pages/client/main/main.component';
 import {ResultComponent} from './pages/client/result/result.component';
 import {TestComponent} from './pages/client/test/test.component';
@@ -56,19 +50,19 @@ import {QuestionHttpService} from './services/question/question-http.service';
     LayoutModule,
     MatButtonModule,
     MatCardModule,
-    MatFormFieldModule,
-    MatIconModule,
     MatInputModule,
     MatListModule,
     MatMenuModule,
-    MatPaginatorModule,
-    MatTableModule,
     MatToolbarModule,
-    MatSidenavModule,
-    MatSelectModule,
-    MatSortModule,
-    MatAutocompleteModule,
     ReactiveFormsModule,
+    // MatIconModule,
+    // MatFormFieldModule,
+    // MatPaginatorModule,
+    // MatTableModule,
+    // MatSidenavModule,
+    // MatSelectModule,
+    // MatSortModule,
+    // MatAutocompleteModule,
 
   ],
   providers: [BaseHttpService, QuestionHttpService],
