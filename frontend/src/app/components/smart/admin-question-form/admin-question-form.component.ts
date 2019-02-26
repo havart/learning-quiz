@@ -55,10 +55,10 @@ export class AdminQuestionFormComponent implements OnInit {
     this.form = this.formBuilder.group({
       question: [null, [Validators.required, Validators.minLength(10)]],
       category: [null, [Validators.required, Validators.minLength(5)]],
-      answer1: [null, Validators.required],
-      answer2: [null, Validators.required],
-      answer3: [null, Validators.required],
-      answer4: [null, Validators.required],
+      answer1: [null],
+      answer2: [null],
+      answer3: [null],
+      answer4: [null],
     });
   }
 

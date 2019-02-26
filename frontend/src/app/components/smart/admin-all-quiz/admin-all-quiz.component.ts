@@ -19,10 +19,10 @@ import {IQuestion} from 'src/app/models/question.model';
 })
 export class AdminAllQuizComponent implements OnInit {
   listQuiz: IQuiz[];
-  quizQuestion;
-  questionTitle = [];
-  questionsTitles = [];
-  columnsToDisplay = ['carriage', 'title', 'description', 'button'];
+  quizQuestion: string;
+  questionTitle: Array<any> = [];
+  questionsTitles: Array<any> = [];
+  columnsToDisplay: Array<any> = ['carriage', 'title', 'description', 'button'];
 
 
   constructor(private quizService: QuizHttpService, private questionService: QuestionHttpService) {

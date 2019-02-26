@@ -1,0 +1,19 @@
+<div class='questionField'>
+  <h2> {{title}} </h2>
+
+  <div *ngIf="answers[0]!==undefined">
+    <div class="testAnswerField" *ngFor="let answer of answers; let i = index"
+         (click)="userTypeSelect($event, answer);" id={{i}}>
+      {{answer}}
+    </div>
+  </div>
+
+  <textarea placeholder="Введите свой ответ" class="testAnswerField"
+            *ngIf="answers[0]===undefined" [(ngModel)]="myTextarea">
+  </textarea>
+
+  <button class="mat-elevation-z8" color="primary" mat-raised-button
+          type="submit" (click)="nextQuestion($event, myTextarea); ">
+    {{buttonValue}}
+  </button>
+</div>
