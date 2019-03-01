@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  userName = '';
+  userName: string;
 
   onSignIn() {
     this.userName = 'Cool User Ivanovich';

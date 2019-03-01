@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatCardModule,
@@ -15,7 +15,7 @@ import {
   MatSortModule,
   MatTableModule,
   MatToolbarModule,
-  MatAutocompleteModule,
+  MatAutocompleteModule
 } from '@angular/material';
 
 import { AdminComponent } from './admin.component';
@@ -27,8 +27,6 @@ import { AdminAllQuestionsComponent } from 'src/app/components/smart/admin-all-q
 import { AdminAllQuizComponent } from 'src/app/components/smart/admin-all-quiz/admin-all-quiz.component';
 import { AdminRoutingModule } from './admin-routing.module';
 
-
-
 @NgModule({
   declarations: [
     AdminComponent,
@@ -37,14 +35,13 @@ import { AdminRoutingModule } from './admin-routing.module';
     AdminNavComponent,
     AdminMainComponent,
     AdminAllQuestionsComponent,
-    AdminAllQuizComponent,
+    AdminAllQuizComponent
   ],
   imports: [
     AdminRoutingModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
@@ -58,7 +55,7 @@ import { AdminRoutingModule } from './admin-routing.module';
     MatSidenavModule,
     MatSelectModule,
     MatSortModule,
-    MatAutocompleteModule,
-  ],
+    MatAutocompleteModule
+  ]
 })
-export class AdminModule { }
+export class AdminModule {}

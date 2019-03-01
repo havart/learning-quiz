@@ -11,48 +11,40 @@ import { AdminComponent } from './admin.component';
 const adminRoutes: Routes = [
   {
     path: '',
-    component: AdminComponent,
+    component: AdminComponent
   },
   {
     path: 'questions',
-    component: AdminAllQuestionsComponent,
+    component: AdminAllQuestionsComponent
   },
   {
     path: 'main',
-    component: AdminMainComponent,
+    component: AdminMainComponent
   },
   {
     path: 'questions/new',
-    component: AdminQuestionFormComponent,
+    component: AdminQuestionFormComponent
   },
   {
     path: 'questions/:id',
-    component: AdminQuestionFormComponent,
+    component: AdminQuestionFormComponent
   },
   {
     path: 'quizzes',
-    component: AdminAllQuizComponent,
+    component: AdminAllQuizComponent
   },
   {
     path: 'quiz/new',
-    component: AdminQuizFormComponent,
+    component: AdminQuizFormComponent
   },
   {
     path: 'quiz/:id',
-    component: AdminQuizFormComponent,
-  },
+    component: AdminQuizFormComponent
+  }
 ];
 
 @NgModule({
-
-  imports: [
-    RouterModule.forChild(
-       adminRoutes,
-    ),
-     CommonModule
-  ],
-  exports: [
-    RouterModule,
-  ],
+  imports: [RouterModule.forChild(adminRoutes), CommonModule],
+  exports: [RouterModule]
 })
-export class AdminRoutingModule { }
+export class AdminRoutingModule {}
