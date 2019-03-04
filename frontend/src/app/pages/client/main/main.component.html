@@ -3,4 +3,8 @@
         routerLink='/test/{{category._id}}'>
   {{category.title}}
 </button> -->
-<app-category></app-category>
+<app-category
+  *ngFor="let category of listQuiz"
+  [testCategory]="category"
+  routerLink="/test/{{ category._id }}"
+></app-category>
