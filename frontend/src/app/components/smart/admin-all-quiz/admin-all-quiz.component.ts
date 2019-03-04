@@ -30,7 +30,7 @@ import { IQuestion } from 'src/app/models/question.model';
   ]
 })
 export class AdminAllQuizComponent implements OnInit {
-   listQuiz: IQuiz[];
+  listQuiz: IQuiz[];
   quizQuestion: string;
   questionsTitles: string[] = [];
   columnsToDisplay = ['carriage', 'title', 'description', 'button'];
@@ -49,10 +49,12 @@ export class AdminAllQuizComponent implements OnInit {
   }
 
   loadAllQuiz() {
-    this.quizService.getAll().subscribe((results: IQuiz[]) => {
-      this.listQuiz = results;
-    },
-    err => console.log('err' + err));
+    this.quizService.getAll().subscribe(
+      (results: IQuiz[]) => {
+        this.listQuiz = results;
+      },
+      err => console.log('err' + err)
+    );
   }
 
   questionById(array) {
@@ -72,6 +74,5 @@ export class AdminAllQuizComponent implements OnInit {
     this.questionService.getByParam<IQuestion>(questionId).subscribe(result => {
       this.questionsTitles = [...this.questionsTitles, result.question];
     });
-
   }
 }

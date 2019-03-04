@@ -95,12 +95,12 @@ export class TestComponent implements OnInit {
     }
   }
 
-  userTypeSelect(answer: string) {
-    const answerExists = this.answerChecked(answer);
-    this.userAnswersArray = this.userAnswersArray.filter(elem => {
-      return elem !== answer;
-    });
-    answerExists ? this.userAnswersArray : this.addAnswer(answer);
+  userTypeSelect(answer: string): void {
+    this.answerChecked(answer)
+      ? (this.userAnswersArray = this.userAnswersArray.filter(elem => {
+          return elem !== answer;
+        }))
+      : this.addAnswer(answer);
   }
 
   answerChecked(answer: string): boolean {

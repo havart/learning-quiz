@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { QuestionHttpService } from 'src/app/services/question/question-http.service';
 import { IQuestion, QUESTION_CATEGORIES } from '../../../models/question.model';
