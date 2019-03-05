@@ -94,7 +94,10 @@ export class AdminQuizFormComponent implements OnInit {
         question => question._id === questionId
       );
       if (question) {
-        this.questionsTitlesArray = [...this.questionsTitlesArray, question.question];
+        this.questionsTitlesArray = [
+          ...this.questionsTitlesArray,
+          question.question
+        ];
       }
     });
   }
