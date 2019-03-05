@@ -18,9 +18,9 @@ export interface IQuestion {
 }
 
 export const QUESTION_CATEGORIES = [
-  {key: 1, title: 'JavaScript'},
-  {key: 2, title: 'HTML'},
-  {key: 3, title: 'CSS'},
-  {key: 4, title: 'PHP'},
+  { key: 1, title: 'JavaScript' },
+  { key: 2, title: 'HTML' },
+  { key: 3, title: 'CSS' },
+  { key: 4, title: 'PHP' }
   // {key: 5, title: 'OTHER'},
 ];

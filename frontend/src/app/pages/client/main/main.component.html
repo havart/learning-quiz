@@ -1,5 +1,4 @@
-<button mat-flat-button color="primary"
+<app-category
   *ngFor="let category of listQuiz"
-        routerLink='/test/{{category._id}}'>
-  {{category.title}}
-</button>
+  [testCategory]="category"
+></app-category>
