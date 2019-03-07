@@ -1,5 +1,5 @@
 <div class="mat-elevation-z8">
-  <table mat-table class="full-width-table" [dataSource]="listQuestions" matSort aria-label="question">
+  <table mat-table class="full-width-table" [dataSource]="(listQuestions$ | async)" matSort aria-label="question">
 
     <!-- Question Column -->
     <ng-container matColumnDef="question">
@@ -38,9 +38,9 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <mat-paginator [length]="dataSource.data.length"
+  <!-- <mat-paginator [length]="dataSource.data.length"
                  [pageIndex]="0"
                  [pageSize]="50"
                  [pageSizeOptions]="[25, 50, 100, 250]">
-  </mat-paginator>
+  </mat-paginator> -->
 </div>
