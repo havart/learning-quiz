@@ -22,7 +22,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { BaseHttpService } from './services/base-http/base-http.service';
 import { QuestionHttpService } from './services/question/question-http.service';
 import { CategoryComponent } from './components/dumb/category/category.component';
-import { QuestionComponent } from './components/dumb/question/question.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { QuestionComponent } from './components/dumb/question/question.component
     ResultComponent,
     LoginFormComponent,
     CategoryComponent,
-    QuestionComponent
+
   ],
   imports: [
     AppRoutingModule,
@@ -42,7 +42,6 @@ import { QuestionComponent } from './components/dumb/question/question.component
     FormsModule,
     HttpClientModule,
     LayoutModule,
-
     MatButtonModule,
     MatCardModule,
     MatInputModule,
