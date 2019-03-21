@@ -1,0 +1,14 @@
+<mat-card>
+    <h3>Помощь</h3>
+    <ng-content></ng-content>
+    <button (click)="toggle()" [ngClass]="{ buttonColorRed: color }">
+        <i *ngIf="call; else callEnd" class="material-icons">
+            call
+        </i>
+        <ng-template #callEnd>
+            <i class="material-icons">
+                call_end
+            </i>
+        </ng-template>
+    </button>
+</mat-card>

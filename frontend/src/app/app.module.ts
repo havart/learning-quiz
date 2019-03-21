@@ -2,14 +2,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatToolbarModule
-} from '@angular/material';
+import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatMenuModule, MatToolbarModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,35 +15,35 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { BaseHttpService } from './services/base-http/base-http.service';
 import { QuestionHttpService } from './services/question/question-http.service';
 import { CategoryComponent } from './components/dumb/category/category.component';
-
+import { PhoneWidgetComponent } from './components/smart/phone-widget/phone-widget.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PageNotFoundComponent,
-    MainComponent,
-    TestComponent,
-    ResultComponent,
-    LoginFormComponent,
-    CategoryComponent,
-
-  ],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpClientModule,
-    LayoutModule,
-    MatButtonModule,
-    MatCardModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatToolbarModule,
-    ReactiveFormsModule
-  ],
-  providers: [BaseHttpService, QuestionHttpService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        PageNotFoundComponent,
+        MainComponent,
+        TestComponent,
+        ResultComponent,
+        LoginFormComponent,
+        CategoryComponent,
+        PhoneWidgetComponent,
+    ],
+    imports: [
+        AppRoutingModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        HttpClientModule,
+        LayoutModule,
+        MatButtonModule,
+        MatCardModule,
+        MatInputModule,
+        MatListModule,
+        MatMenuModule,
+        MatToolbarModule,
+        ReactiveFormsModule,
+    ],
+    providers: [BaseHttpService, QuestionHttpService],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}
