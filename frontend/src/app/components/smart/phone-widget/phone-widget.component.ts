@@ -6,12 +6,15 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./phone-widget.component.css'],
 })
 export class PhoneWidgetComponent implements OnInit {
-    call = true;
-    color = false;
+    truth = false;
+    close = false;
     constructor() {}
     ngOnInit() {}
     toggle() {
-        this.call = !this.call;
-        this.color = !this.color;
+        this.truth = !this.truth;
+        this.close = true;
+    }
+    isOpen() {
+        this.close = !this.close;
     }
 }

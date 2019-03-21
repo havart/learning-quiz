@@ -1,8 +1,18 @@
 <mat-card>
-    <h3>Помощь</h3>
-    <ng-content></ng-content>
-    <button (click)="toggle()" [ngClass]="{ buttonColorRed: color }">
-        <i *ngIf="call; else callEnd" class="material-icons">
+    <button class="row" (click)="isOpen()">
+        <i class="material-icons" *ngIf="!close">
+            keyboard_arrow_up
+        </i>
+        <i class="material-icons" *ngIf="close">
+            keyboard_arrow_down
+        </i>
+    </button>
+    <div *ngIf="close"> 
+        <h3>Помощь</h3>
+        <ng-content></ng-content>
+    </div>
+    <button (click)="toggle()" [ngClass]="{ buttonColorRed: truth }">
+        <i *ngIf="truth; else callEnd" class="material-icons">
             call
         </i>
         <ng-template #callEnd>

@@ -3,15 +3,12 @@ mat-card {
     flex-direction: column;
     position: fixed;
     bottom: 2%;
-    right: 2%;
+    right: 10%;
     width: 15%;
     border: solid 2px #ced2e6;
     align-items: center;
     padding: 5px;
     background: #ffffffd0;
-}
-.material-icons {
-    font-size: 3em;
 }
 button {
     width: 48%;
@@ -19,6 +16,10 @@ button {
     color: rgb(255, 255, 255);
     border: 0;
     border-radius: 5px;
+}
+.row{
+    background: transparent;
+    color: rgb(0, 0, 0);
 }
 
 .buttonColorRed {
