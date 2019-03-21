@@ -1,0 +1,7 @@
+.example-card {
+    border: solid 1px skyblue;
+}
+.titel-field {
+    display: flex;
+    justify-content: space-between;
+}

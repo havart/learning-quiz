@@ -9,42 +9,42 @@ import { AdminQuizFormComponent } from 'src/app/components/smart/admin-quiz-form
 import { AdminComponent } from './admin.component';
 
 const adminRoutes: Routes = [
-  {
-    path: '',
-    component: AdminComponent
-  },
-  {
-    path: 'questions',
-    component: AdminAllQuestionsComponent
-  },
-  {
-    path: 'main',
-    component: AdminMainComponent
-  },
-  {
-    path: 'questions/new',
-    component: AdminQuestionFormComponent
-  },
-  {
-    path: 'questions/:id',
-    component: AdminQuestionFormComponent
-  },
-  {
-    path: 'quizzes',
-    component: AdminAllQuizComponent
-  },
-  {
-    path: 'quiz/new',
-    component: AdminQuizFormComponent
-  },
-  {
-    path: 'quiz/:id',
-    component: AdminQuizFormComponent
-  }
+    {
+        path: '',
+        component: AdminComponent,
+    },
+    {
+        path: 'questions',
+        component: AdminAllQuestionsComponent,
+    },
+    {
+        path: 'main',
+        component: AdminMainComponent,
+    },
+    {
+        path: 'questions/new',
+        component: AdminQuestionFormComponent,
+    },
+    {
+        path: 'questions/:id',
+        component: AdminQuestionFormComponent,
+    },
+    {
+        path: 'quizzes',
+        component: AdminAllQuizComponent,
+    },
+    {
+        path: 'quiz/new',
+        component: AdminQuizFormComponent,
+    },
+    {
+        path: 'quiz/:id',
+        component: AdminQuizFormComponent,
+    },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(adminRoutes), CommonModule],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(adminRoutes), CommonModule],
+    exports: [RouterModule],
 })
 export class AdminRoutingModule {}

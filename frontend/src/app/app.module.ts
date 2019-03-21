@@ -23,6 +23,7 @@ import { BaseHttpService } from './services/base-http/base-http.service';
 import { QuestionHttpService } from './services/question/question-http.service';
 import { CategoryComponent } from './components/dumb/category/category.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { CategoryComponent } from './components/dumb/category/category.component
     TestComponent,
     ResultComponent,
     LoginFormComponent,
-    CategoryComponent
+    CategoryComponent,
+
   ],
   imports: [
     AppRoutingModule,
@@ -40,7 +42,6 @@ import { CategoryComponent } from './components/dumb/category/category.component
     FormsModule,
     HttpClientModule,
     LayoutModule,
-
     MatButtonModule,
     MatCardModule,
     MatInputModule,
