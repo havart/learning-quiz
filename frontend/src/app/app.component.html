@@ -1,27 +1,31 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <a mat-button routerLink="/main" class="mainQuiz">Quiz</a>
+    <mat-toolbar-row>
+        <a mat-button routerLink="/main" class="mainQuiz">Quiz</a>
+        <button mat-button [matMenuTriggerFor]="admin" *ngIf="userName">Admin</button>
+        <mat-menu #admin="matMenu">
+            <a mat-menu-item routerLink="/admin/questions">Questions</a>
+            <a mat-menu-item routerLink="/admin/quizzes">Quizzes</a>
+        </mat-menu>
 
-    <button mat-button [matMenuTriggerFor]="admin" *ngIf="userName">Admin</button>
-
-    <mat-menu #admin="matMenu">
-      <a mat-menu-item routerLink='/admin/questions'>Questions</a>
-      <a mat-menu-item routerLink='/admin/quizzes'>Quizzes</a>
-    </mat-menu>
-
-    <span class="spacer"></span>
-    <h5>Привет, {{userName ? userName : 'Guest'}}</h5>
-    <button mat-button>
-      <i class="material-icons"> perm_identity </i>
-    </button>
-    <button mat-button (click)="onSignIn()" *ngIf="!userName">
-      <i class="material-icons"> exit_to_app </i>
-    </button>
-
-    <button mat-button (click)="onSignOut()" *ngIf="userName">
-      <i class="material-icons"> launch </i>
-    </button>
-    <!-- <button mat-button routerLink='/admin'> <i class="material-icons"> exit_to_app </i></button> -->
-  </mat-toolbar-row>
+        <span class="spacer"></span>
+        <h5>Привет, {{ userName ? userName : 'Guest' }}</h5>
+        <button mat-button>
+            <i class="material-icons"> perm_identity </i>
+        </button>
+        <button mat-button (click)="onSignIn()" *ngIf="!userName">
+            <i class="material-icons"> exit_to_app </i>
+        </button>
+        <button mat-button (click)="onSignOut()" *ngIf="userName">
+            <i class="material-icons"> launch </i>
+        </button>
+        <!-- <button mat-button routerLink='/admin'> <i class="material-icons"> exit_to_app </i></button> -->
+    </mat-toolbar-row>
 </mat-toolbar>
 <router-outlet></router-outlet>
+
+<app-phone-widget>
+    <h3>
+        hello
+    </h3>
+    <p>I call you later</p>
+</app-phone-widget>
