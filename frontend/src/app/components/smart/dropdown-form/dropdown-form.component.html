@@ -1,0 +1,30 @@
+<form (ngSubmit)="updateQuestion()" [formGroup]="form" class="form">
+        <p *ngIf="isSave">Сохранено!</p>
+    <mat-form-field>
+        <mat-select formControlName="category" placeholder="Категория">
+            <mat-option *ngFor="let category of QUESTION_CATEGORIES" [value]="category.key">
+                {{ category.title }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput formControlName="question" matInput placeholder="Вопрос" (keyup)="search($event)" (click)="search($event)" [matAutocomplete]="auto" />
+        <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let question of filterAllQuestions, let index = index" [value]="question.question" (click)="checkQuestion(index)">
+                {{ question.question }}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input formControlName="answer1" matInput placeholder="Ответ"  />
+    </mat-form-field>
+    
+    <button class="mat-elevation-z8" color="primary" mat-raised-button type="submit" (click)="updateQuestion()">
+        Сохранить
+    </button>
+    <button class="mat-elevation-z8" color="basic" mat-raised-button type="button" (click)="cancel()">
+        Отмена
+    </button>
+</form>
