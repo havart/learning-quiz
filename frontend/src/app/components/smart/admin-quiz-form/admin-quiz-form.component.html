@@ -1,24 +1,21 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="form" class="form">
+    <mat-form-field>
+        <input formControlName="title" matInput placeholder="Название теста" />
+    </mat-form-field>
 
-  <mat-form-field>
-    <input formControlName="title" matInput
-           placeholder="Название теста">
-  </mat-form-field>
+    <mat-form-field>
+        <input formControlName="description" matInput placeholder="Описание" />
+    </mat-form-field>
 
-  <mat-form-field>
-    <input formControlName="description" matInput
-           placeholder="Описание">
-  </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="Toppings" formControlName="questionsArray" multiple>
+            <mat-option *ngFor="let option of listQuestions" [value]="option._id" (click)="sendToArray(option._id)">
+                {{ option.question }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
 
-  <mat-form-field>
-    <mat-select placeholder="Toppings" formControlName="questionsArray" multiple>
-      <mat-option *ngFor="let option of listQuestions" [value]="option._id" (click)="sendToArray(option._id)">
-        {{option.question}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <button class="mat-elevation-z8" color="primary" mat-raised-button type="submit">
-    {{quizId ? 'Сохранить запись ' : 'Создать'}}
-  </button>
+    <button class="mat-elevation-z8" color="primary" mat-raised-button type="submit">
+        {{ quizId ? 'Сохранить запись ' : 'Создать' }}
+    </button>
 </form>

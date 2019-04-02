@@ -9,7 +9,11 @@
 
     <mat-form-field>
         <mat-select formControlName="question" placeholder="Вопрос">
-            <mat-option *ngFor="let question of (filterAllQuestions$ | async)" [value]="question.question" (click)="checkQuestion(question._id)">
+            <mat-option
+                *ngFor="let question of (filterAllQuestions$ | async)"
+                [value]="question.question"
+                (click)="checkQuestion(question._id)"
+            >
                 {{ question.question }}
             </mat-option>
         </mat-select>

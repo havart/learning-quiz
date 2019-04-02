@@ -18,7 +18,11 @@ export class DropdownFormComponent implements OnInit {
     id: string;
     isSave = false;
 
-    constructor(private formBuilder: FormBuilder, private questionService: QuestionHttpService, private snackBar: MatSnackBar) {}
+    constructor(
+        private formBuilder: FormBuilder,
+        private questionService: QuestionHttpService,
+        private snackBar: MatSnackBar,
+    ) {}
 
     ngOnInit() {
         this.initForm();
@@ -38,8 +42,9 @@ export class DropdownFormComponent implements OnInit {
         this.questionService.getByParam<IQuestion>(questionId).subscribe(question => this.form.patchValue(question));
     }
     search() {
-        this.filterAllQuestions$ = this.questionService.getAll()
-        .pipe(map(val => val.filter(prop => prop.category === this.form.value.category)));
+        this.filterAllQuestions$ = this.questionService
+            .getAll()
+            .pipe(map(val => val.filter(prop => prop.category === this.form.value.category)));
     }
     checkQuestion(id) {
         this.loadQuestionById(id);
@@ -47,9 +52,7 @@ export class DropdownFormComponent implements OnInit {
     }
     updateQuestion() {
         if (this.form.valid) {
-            this.questionService
-                .update(this.id, this.form.value)
-                .subscribe(() => this.openSnackBar());
+            this.questionService.update(this.id, this.form.value).subscribe(() => this.openSnackBar());
         }
     }
     openSnackBar() {
@@ -61,10 +64,12 @@ export class DropdownFormComponent implements OnInit {
 @Component({
     selector: 'app-saved-form',
     templateUrl: './saved.html',
-    styles: [`
+    styles: [
+        `
             .saved-form {
                 color: white;
             }
-        `],
+        `,
+    ],
 })
 export class SavedFormComponent {}

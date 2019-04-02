@@ -7,7 +7,7 @@
             keyboard_arrow_down
         </i>
     </button>
-    <div *ngIf="close"> 
+    <div *ngIf="close">
         <ng-content></ng-content>
     </div>
     <button (click)="toggle()" [ngClass]="{ buttonColorRed: truth }">
