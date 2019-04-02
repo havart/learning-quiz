@@ -63,6 +63,6 @@ import { DropdownFormComponent, SavedFormComponent } from './components/smart/dr
     ],
     providers: [BaseHttpService, QuestionHttpService],
     bootstrap: [AppComponent],
-    entryComponents: [SavedFormComponent]
+    entryComponents: [SavedFormComponent],
 })
 export class AppModule {}
