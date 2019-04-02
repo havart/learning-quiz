@@ -2,7 +2,18 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatMenuModule, MatToolbarModule } from '@angular/material';
+import {
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatSnackBarModule,
+} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +27,7 @@ import { BaseHttpService } from './services/base-http/base-http.service';
 import { QuestionHttpService } from './services/question/question-http.service';
 import { CategoryComponent } from './components/dumb/category/category.component';
 import { PhoneWidgetComponent } from './components/smart/phone-widget/phone-widget.component';
+import { DropdownFormComponent, SavedFormComponent } from './components/smart/dropdown-form/dropdown-form.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +39,8 @@ import { PhoneWidgetComponent } from './components/smart/phone-widget/phone-widg
         LoginFormComponent,
         CategoryComponent,
         PhoneWidgetComponent,
+        DropdownFormComponent,
+        SavedFormComponent,
     ],
     imports: [
         AppRoutingModule,
@@ -35,15 +49,20 @@ import { PhoneWidgetComponent } from './components/smart/phone-widget/phone-widg
         FormsModule,
         HttpClientModule,
         LayoutModule,
+        MatAutocompleteModule,
         MatButtonModule,
         MatCardModule,
         MatInputModule,
+        MatFormFieldModule,
         MatListModule,
         MatMenuModule,
+        MatSelectModule,
         MatToolbarModule,
+        MatSnackBarModule,
         ReactiveFormsModule,
     ],
     providers: [BaseHttpService, QuestionHttpService],
     bootstrap: [AppComponent],
+    entryComponents: [SavedFormComponent]
 })
 export class AppModule {}

@@ -1,18 +1,20 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  userName: string;
+    userName: string;
+    isOpen = false;
 
-  onSignIn() {
-    this.userName = 'Cool User Ivanovich';
-  }
+    onSignIn() {
+        this.userName = 'Cool User Ivanovich';
+    }
 
-  onSignOut() {
-    this.userName = '';
-  }
+    onSignOut() {
+        this.userName = '';
+    }
+
 }
