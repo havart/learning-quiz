@@ -1,4 +1,9 @@
 <button mat-raised-button color="primary" routerLink="/admin/questions/new">
     Добавить вопрос
 </button>
-<app-question (doEvent)="doEvent($event, questions._id)" *ngFor="let questions of (listQuestions$ | async)" [questions]="questions"> </app-question>
+<app-question
+    (doEvent)="doEvent($event, questions._id)"
+    *ngFor="let questions of (listQuestions$ | async)"
+    [questions]="questions"
+>
+</app-question>

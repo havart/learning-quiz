@@ -3,8 +3,12 @@
     <div class="titel-field">
         <mat-card-subtitle> {{ getCategoryTitle(questions.category) }} </mat-card-subtitle>
         <div>
-            <button color="primary" (click)="getEvent('edit')" mat-raised-button><i class="material-icons"> edit </i></button>
-            <button color="warn" (click)="getEvent('delete')" mat-raised-button><i class="material-icons"> delete </i></button>
+            <button color="primary" (click)="getEvent('edit')" mat-raised-button>
+                <i class="material-icons"> edit </i>
+            </button>
+            <button color="warn" (click)="getEvent('delete')" mat-raised-button>
+                <i class="material-icons"> delete </i>
+            </button>
         </div>
     </div>
 </mat-card>
