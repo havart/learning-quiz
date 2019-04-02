@@ -12,6 +12,7 @@ import {
     MatToolbarModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatSnackBarModule,
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,7 +27,7 @@ import { BaseHttpService } from './services/base-http/base-http.service';
 import { QuestionHttpService } from './services/question/question-http.service';
 import { CategoryComponent } from './components/dumb/category/category.component';
 import { PhoneWidgetComponent } from './components/smart/phone-widget/phone-widget.component';
-import { DropdownFormComponent } from './components/smart/dropdown-form/dropdown-form.component';
+import { DropdownFormComponent, SavedFormComponent } from './components/smart/dropdown-form/dropdown-form.component';
 
 @NgModule({
     declarations: [
@@ -39,6 +40,7 @@ import { DropdownFormComponent } from './components/smart/dropdown-form/dropdown
         CategoryComponent,
         PhoneWidgetComponent,
         DropdownFormComponent,
+        SavedFormComponent,
     ],
     imports: [
         AppRoutingModule,
@@ -56,9 +58,11 @@ import { DropdownFormComponent } from './components/smart/dropdown-form/dropdown
         MatMenuModule,
         MatSelectModule,
         MatToolbarModule,
+        MatSnackBarModule,
         ReactiveFormsModule,
     ],
     providers: [BaseHttpService, QuestionHttpService],
     bootstrap: [AppComponent],
+    entryComponents: [SavedFormComponent]
 })
 export class AppModule {}

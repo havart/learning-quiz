@@ -1,5 +1,4 @@
 <form (ngSubmit)="updateQuestion()" [formGroup]="form" class="form">
-        <p *ngIf="isSave">Сохранено!</p>
     <mat-form-field>
         <mat-select formControlName="category" placeholder="Категория">
             <mat-option *ngFor="let category of QUESTION_CATEGORIES" [value]="category.key" (click)="search()">
@@ -9,17 +8,17 @@
     </mat-form-field>
 
     <mat-form-field>
-            <mat-select formControlName="question" placeholder="Вопрос">
-                <mat-option *ngFor="let question of (filterAllQuestions$ | async)" [value]="question.question" (click)="checkQuestion(question._id); search()">
-                    {{ question.question }}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+        <mat-select formControlName="question" placeholder="Вопрос">
+            <mat-option *ngFor="let question of (filterAllQuestions$ | async)" [value]="question.question" (click)="checkQuestion(question._id)">
+                {{ question.question }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
 
     <mat-form-field>
-        <input formControlName="answer1" matInput placeholder="Ответ"  />
+        <input formControlName="answer1" matInput placeholder="Ответ" />
     </mat-form-field>
-    
+
     <button class="mat-elevation-z8" color="primary" mat-raised-button type="submit" (click)="updateQuestion()">
         Сохранить
     </button>

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { QUESTION_CATEGORIES, IQuestion } from '../../../models/question.model';
-
 import { Observable } from 'rxjs';
 import { QuestionHttpService } from 'src/app/services/question/question-http.service';
-import { map, tap} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
     selector: 'app-dropdown-form',
@@ -14,12 +14,11 @@ import { map, tap} from 'rxjs/operators';
 export class DropdownFormComponent implements OnInit {
     form: FormGroup = new FormGroup({});
     QUESTION_CATEGORIES = QUESTION_CATEGORIES;
-    listQuestions$: Observable<IQuestion[]>;
     filterAllQuestions$: Observable<IQuestion[]>;
     id: string;
     isSave = false;
 
-    constructor(private formBuilder: FormBuilder, private questionService: QuestionHttpService) {}
+    constructor(private formBuilder: FormBuilder, private questionService: QuestionHttpService, private snackBar: MatSnackBar) {}
 
     ngOnInit() {
         this.initForm();
@@ -38,11 +37,9 @@ export class DropdownFormComponent implements OnInit {
     private loadQuestionById(questionId: string) {
         this.questionService.getByParam<IQuestion>(questionId).subscribe(question => this.form.patchValue(question));
     }
-
     search() {
-        this.filterAllQuestions$ = this.questionService.getAll().pipe(
-            map(val => val.filter(prop => prop.category === this.form.value.category)),
-        );
+        this.filterAllQuestions$ = this.questionService.getAll()
+        .pipe(map(val => val.filter(prop => prop.category === this.form.value.category)));
     }
     checkQuestion(id) {
         this.loadQuestionById(id);
@@ -52,14 +49,22 @@ export class DropdownFormComponent implements OnInit {
         if (this.form.valid) {
             this.questionService
                 .update(this.id, this.form.value)
-                .pipe(tap(() => this.saved()))
-                .subscribe();
+                .subscribe(() => this.openSnackBar());
         }
     }
-    saved() {
-        this.isSave = true;
-        setTimeout(() => {
-            this.isSave = false;
-        }, 1000);
+    openSnackBar() {
+        this.snackBar.openFromComponent(SavedFormComponent, {
+            duration: 2000,
+        });
     }
 }
+@Component({
+    selector: 'app-saved-form',
+    templateUrl: './saved.html',
+    styles: [`
+            .saved-form {
+                color: white;
+            }
+        `],
+})
+export class SavedFormComponent {}
