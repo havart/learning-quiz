@@ -1,7 +1,7 @@
 <mat-card>
-        <ng-content></ng-content>
+    <ng-content></ng-content>
     <button (click)="toggle()" [ngClass]="{ buttonColorRed: truth }">
-        <i *ngIf="currentCall$ | async; else callEnd" class="material-icons">
+        <i *ngIf="(currentCall$ | async); else callEnd" class="material-icons">
             call
         </i>
         <ng-template #callEnd>

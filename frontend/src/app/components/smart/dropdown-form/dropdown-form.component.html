@@ -33,10 +33,17 @@
                 <input formControlName="answer1" matInput placeholder="Ответ" />
             </mat-form-field>
 
-            <button class="mat-elevation-z8" color="primary" mat-raised-button type="submit" (click)="updateQuestion()">
+            <button
+                class="mat-elevation-z8"
+                color="primary"
+                mat-raised-button
+                type="submit"
+                [disabled]="form.invalid"
+                (click)="updateQuestion()"
+            >
                 Сохранить
             </button>
-            <button class="mat-elevation-z8" color="basic" mat-raised-button type="button" (click)="initForm()">
+            <button class="mat-elevation-z8" color="basic" mat-raised-button type="button" (click)="cansel()">
                 Отмена
             </button>
         </form>

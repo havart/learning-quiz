@@ -30,5 +30,6 @@ export class CallService {
     }
     completeCall() {
         this.currentCall$.next(null);
+        this.fillForm(null);
     }
 }
