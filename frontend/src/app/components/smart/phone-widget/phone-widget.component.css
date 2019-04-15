@@ -17,11 +17,6 @@ button {
     border: 0;
     border-radius: 5px;
 }
-.row {
-    background: transparent;
-    color: rgb(0, 0, 0);
-}
-
 .buttonColorRed {
     background: #f44336;
 }
