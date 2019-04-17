@@ -57,7 +57,7 @@ export class DropdownFormComponent implements OnInit {
         this.questionService.getByParam<IQuestion>(questionId).subscribe(question => this.form.patchValue(question));
     }
     cansel() {
-        this.close = false;
+        this.form.reset();
     }
     search() {
         this.filterAllQuestions$ = this.questionService
